@@ -30,7 +30,8 @@ axios.get('/user?ID=f680275c')
   .catch(function (error) {
     console.log(error);
   });const db = require('db')
-db.connect({
+    db.connect({
+  
   host: process.env.DB_HOST,
   username: process.env.DB_USER,
   password: process.env.DB_PASS
