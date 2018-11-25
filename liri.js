@@ -1,5 +1,13 @@
 require("dotenv").config();
 
+const result = dotenv.config()
+ 
+if (result.error) {
+  throw result.error
+}
+ 
+console.log(result.parsed)
+
 var Spotify = require('node-spotify-api');
  
 var spotify = new Spotify({
@@ -28,10 +36,4 @@ db.connect({
   password: process.env.DB_PASS
 });
 
-const result = dotenv.config()
- 
-if (result.error) {
-  throw result.error
-}
- 
-console.log(result.parsed)
+
