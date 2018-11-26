@@ -1,3 +1,5 @@
+var inquirer = require("inquirer");
+
 require("dotenv").config();
 
 const result = dotenv.config()
@@ -20,12 +22,19 @@ spotify.search({ type: 'track', query: 'All the Small Things' }, function(err, d
     return console.log('Error occurred: ' + err);
   }
  
-console.log(data); 
+console.log(chalk`
+Artist: ${songs.artist[0].name}
+Song Title: ${songs.name}
+Album: ${songs.album.name}
+Spotify Link: ${songs.external_urls.spotify}
+`); 
 });
+
+var axios = require("axios");
 
 axios.get('/user?ID=f680275c')
   .then(function (response) {
-    console.log(response);
+    console.log("The movie's rating is: " + response.data.imdbRating);
   })
   .catch(function (error) {
     console.log(error);
