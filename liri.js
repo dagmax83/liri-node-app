@@ -11,7 +11,7 @@ if (result.error) {
 console.log(result.parsed)
 
 var Spotify = require('node-spotify-api');
- 
+var spotify = new Spotify(keys.spotify); 
 var spotify = new Spotify({
   id: <4b64e9ac130048c18dd2fd95d9edba9f>,
   secret: <4bf34fcd5184d2e8c9517150aeb065e>
